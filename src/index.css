@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+
+.formContainer {
+    margin: 4rem;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.formActual {
+    border: 2px solid black;
+    padding: 1rem;
+}
+
+.formControl {
+    display: flex;
+    flex-direction: column;
+}
+
+.signUpInput {
+    border: 2px solid black
+}
+
+.signUpButton {
+    margin-top: 1rem;
+}
