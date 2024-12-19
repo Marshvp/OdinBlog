@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginFetch from "../../api/loginFetch";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loginData, setLoginData] = useState(null)
-
+  const navigate = useNavigate();
   const { data, loading, errors } = LoginFetch(loginData)
 
   function submitLogin(event) {
@@ -13,6 +14,15 @@ export default function LoginForm() {
     console.log("Hit");
     setLoginData({ email, password })
   }
+
+  useEffect(() => {
+    if (data?.token) {
+      localStorage.setItem("token", data.token)
+      localStorage.setItem("username", data.user.username)
+      console.log("Token Saved", data.token)
+      navigate('/')
+    }
+  }, [data, navigate])
 
   return (
     <div>
@@ -38,7 +48,6 @@ export default function LoginForm() {
           })}
         </div>
       )}
-      {data && (<div>Sent</div>)}
     </div>
   )
 }
