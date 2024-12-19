@@ -1,6 +1,5 @@
 import './App.css'
 import NavBar from './components/navbar'
-import SignUpForm from './components/signUpForm'
 
 function App() {
 
@@ -10,7 +9,6 @@ function App() {
     <div className='bg-blogGrey min-h-screen'>
       <NavBar />
       <br />
-      <SignUpForm />
     </div>
   )
 }

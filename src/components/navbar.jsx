@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 export default function NavBar() {
   return (
@@ -17,7 +17,7 @@ export default function NavBar() {
               <span>Login</span>
             </li>
             <li className="border border-blogBlack rounded-sm p-2">
-              <span>Sign Up</span>
+              <Link to="/signup">Sign Up</Link>
             </li>
 
           </div>
