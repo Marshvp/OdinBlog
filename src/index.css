@@ -9,12 +9,19 @@
     font-size: 18px;
 }
 
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    @apply bg-blogGrey;
+}
+
 
 .formContainer {
     margin: 4rem;
     display: flex;
     justify-content: center;
-    
+
 }
 
 .formActual {
