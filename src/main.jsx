@@ -6,6 +6,7 @@ import App from './App'
 import SignUpForm from './components/pages/SignUpForm.jsx'
 import NotFoundPage from './components/NotFoundPage.jsx'
 import Layout from '../Layout.jsx'
+import LoginForm from './components/pages/LoginForm.jsx'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -20,7 +21,11 @@ const router = createBrowserRouter([{
       path: '/signup',
       element: <SignUpForm />
     },
-  ]
+    {
+      path: '/login',
+      element: <LoginForm />
+    }
+  ],
 },
 
 ])

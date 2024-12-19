@@ -16,14 +16,12 @@ export default function NavBar() {
           </li>
           <div className="navBarLogin flex gap-2 px-4">
             <li className="border border-blogBlack rounded-sm p-2">
-              <span>Login</span>
+              <Link to="/login">Login</Link>
             </li>
             <li className="border border-blogBlack rounded-sm p-2">
               <Link to="/signup">Sign Up</Link>
             </li>
-
           </div>
-
         </ul>
       </div>
     </div>
