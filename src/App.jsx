@@ -1,14 +1,14 @@
 import './App.css'
-import NavBar from './components/navbar'
+import BlogList from './components/pages/Blog/BlogList'
 
 function App() {
 
 
 
   return (
-    <div className='bg-blogGrey min-h-screen'>
-      <NavBar />
+    <div >
       <br />
+      <BlogList />
     </div>
   )
 }

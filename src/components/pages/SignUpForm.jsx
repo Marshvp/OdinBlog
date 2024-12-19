@@ -1,5 +1,6 @@
 import { useState } from "react";
-import AddUserFetch from "../api/addUserFetch";
+import AddUserFetch from "../../api/addUserFetch";
+
 
 
 export default function SignUpForm() {

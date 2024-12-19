@@ -5,9 +5,11 @@ export default function NavBar() {
     <div>
       <div className="navBarContainer grid mt-4 mb-4 pt-2 pb-2 bg-blogGrey">
         <ul className="flex justify-end gap-2 px-2">
-          <h1 className="border border-blogBlack rounded-sm p-2">Marshall&apos;s Blog</h1>
+          <Link to='/'>
+            <h1 className="border border-blogBlack rounded-sm p-2">Marshall&apos;s Blog</h1>
+          </Link>
           <li className="border border-blogBlack rounded-sm p-2">
-            <span>Home</span>
+            <Link to='/'>Home</Link>
           </li>
           <li className="border border-blogBlack rounded-sm p-2">
             <span>Blogs</span>
