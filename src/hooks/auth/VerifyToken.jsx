@@ -5,9 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 function isTokenExpired(token) {
   if (!token) return true;
-  const { exp } = jwtDecode(token)
-  return Date.now() >= exp * 1000
+  const decoded = jwtDecode(token)
+  console.log(decoded)
+  return Date.now() >= decoded.exp * 1000
 }
+
 
 export default function useAuth() {
   const navigate = useNavigate();

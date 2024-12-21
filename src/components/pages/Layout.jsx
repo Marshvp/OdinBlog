@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "./src/components/NavBar";
+import NavBar from "../NavBar";
 
 export default function Layout() {
   return (
-    <div className="bg-blogGrey min-h-screen">
+    <div className="px-5 bg-blogGrey min-h-screen ">
       <NavBar />
       <Outlet />
     </div>

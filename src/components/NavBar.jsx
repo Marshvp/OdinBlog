@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom"
 
 export default function NavBar() {
+
+  const token = localStorage.getItem("token")
+  if (token) {
+    const username = localStorage.getItem("username")
+    console.log("Token found");
+  }
+
   return (
     <div>
       <div className="navBarContainer grid mt-4 mb-4 pt-2 pb-2 bg-blogGrey">
