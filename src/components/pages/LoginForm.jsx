@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import LoginFetch from "../../api/loginFetch";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function LoginForm() {
   const [email, setEmail] = useState('')
@@ -8,6 +9,9 @@ export default function LoginForm() {
   const [loginData, setLoginData] = useState(null)
   const navigate = useNavigate();
   const { data, loading, errors } = LoginFetch(loginData)
+  const { logIn } = useContext(AuthContext);
+
+
 
   function submitLogin(event) {
     event.preventDefault();
@@ -17,12 +21,11 @@ export default function LoginForm() {
 
   useEffect(() => {
     if (data?.token) {
-      localStorage.setItem("token", data.token)
-      localStorage.setItem("username", data.user.username)
+      logIn(data.token, data.user.username)
       console.log("Token Saved", data.token)
       navigate('/')
     }
-  }, [data, navigate])
+  }, [data, navigate, logIn],)
 
   return (
     <div>

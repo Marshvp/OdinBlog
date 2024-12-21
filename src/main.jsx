@@ -8,6 +8,7 @@ import NotFoundPage from './components/NotFoundPage.jsx'
 import LoginForm from './components/pages/LoginForm.jsx'
 import TestComponent from './components/pages/testPage.jsx'
 import Layout from './components/pages/Layout.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -37,6 +38,8 @@ const router = createBrowserRouter([{
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
