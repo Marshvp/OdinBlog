@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddUserFetch from "../../api/addUserFetch";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -9,7 +10,7 @@ export default function SignUpForm() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState('');
   const [isAdmin, setIsAdmin] = useState(false)
-
+  const navigate = useNavigate();
   const [userData, setUserData] = useState(null)
   console.log("Pre-UserData", userData)
 
@@ -23,6 +24,7 @@ export default function SignUpForm() {
     console.log(userData);
 
     setUserData(userData)
+    navigate("/");
   }
 
 

@@ -4,18 +4,17 @@ import { AuthContext } from "../context/AuthContext"
 
 export default function NavBar() {
   const { token, username, logOut } = useContext(AuthContext);
-  console.log("NavBar Context", token, username)
   return (
     <div>
       <div key={token ? `user-${username}` : 'guest'} className="navBarContainer grid mt-4 mb-4 pt-2 pb-2 bg-blogGrey">
         <ul className="flex justify-end gap-2 px-2">
           <Link to='/'>
-            <h1 className="border border-blogBlack rounded-sm p-2">Marshall&apos;s Blog</h1>
+            <h1 className="border border-blogBlack rounded-sm p-2 hover:text-blogTeal">Marshall&apos;s Blog</h1>
           </Link>
-          <li className="border border-blogBlack rounded-sm p-2">
+          <li className="border border-blogBlack rounded-sm p-2 hover:text-blogTeal">
             <Link to='/'>Home</Link>
           </li>
-          <li className="border border-blogBlack rounded-sm p-2">
+          <li className="border border-blogBlack rounded-sm p-2 hover:text-blogTeal">
             <span>Blogs</span>
           </li>
           {!token ? (

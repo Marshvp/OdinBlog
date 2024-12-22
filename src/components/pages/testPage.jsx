@@ -1,45 +1,29 @@
+import { useContext } from "react";
+import useCheckAdmin from "../../hooks/auth/VerifyAdmin";
 import useAuth from "../../hooks/auth/VerifyToken";
-
-
+import { AuthContext } from "../../context/AuthContext";
 
 export default function TestComponent() {
-  useAuth();
+  const { isAdmin, loading, error } = useCheckAdmin();
+  const { username } = useContext(AuthContext)
 
-
-  function testFunc() {
-    const testFetch = async () => {
-      const token = localStorage.getItem("token");
-
-      try {
-        const response = await fetch(`http://${import.meta.env.VITE_API}/admin`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          }
-        })
-        if (!response.ok) {
-          const result = await response.json()
-          console.log(result.access)
-          console.log(result.message)
-          return
-        } else {
-          console.log("all good")
-          return
-        }
-      } catch (error) {
-        console.lgo("Error caught:", error)
-        return
-      }
-    }
-    testFetch()
+  if (loading) {
+    return <div>Loading...</div>
   }
 
+  if (error) {
+    return <div>Error: {error}</div>
+  }
 
+  if (!isAdmin) {
+    return null
+  }
 
   return (
     <div>
       <h1>Test page</h1>
-      <div>TestPadding</div>
-      <button onClick={testFunc}>Test</button>
+      <p>Hello, {username}</p>
+      <button className="bg-blogBlack rounded-md p-2 text-slate-300 hover:text-blogTeal">Add a new Blog</button>
     </div>
   )
 }
