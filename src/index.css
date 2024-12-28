@@ -51,3 +51,22 @@ body {
     margin-left: 1.5rem;
     /* Add some indentation */
 }
+
+.prose h1 {
+    font-size: 2.25rem;
+    /* Example size */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.prose h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.prose h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
