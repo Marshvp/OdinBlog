@@ -11,6 +11,7 @@
     "tailwindWatch": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.15",
     "@tiptap/extension-blockquote": "^2.10.4",
     "@tiptap/extension-bullet-list": "^2.10.4",
     "@tiptap/extension-heading": "^2.10.4",

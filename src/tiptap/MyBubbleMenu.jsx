@@ -1,5 +1,6 @@
+import BulletList from "@tiptap/extension-bullet-list";
 import { BubbleMenu } from "@tiptap/react";
-import { Bold, Italic, Strikethrough } from "lucide-react";
+import { Bold, Dot, Italic, Strikethrough } from "lucide-react";
 import PropTypes from "prop-types";
 
 export default function MyBubbleMenu({ editor }) {
@@ -30,6 +31,12 @@ export default function MyBubbleMenu({ editor }) {
           className={`px-2 py-1 rounded ${editor.isActive('strike') ? 'bg-blue-500 text-white' : 'bg-white'}`}>
 
           <Strikethrough />
+        </button>
+        <button
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
+          className={`px-2 py-1 rounded ${editor.isActive('bulletList') ? 'bg-blue-500 text-white' : 'bg-white'}`}>
+
+          <Dot />
         </button>
       </BubbleMenu>
     </>
