@@ -9,6 +9,7 @@ import LoginForm from './components/pages/LoginForm.jsx'
 import TestComponent from './components/pages/testPage.jsx'
 import Layout from './components/pages/Layout.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
+import CreateBlog from './components/pages/admin/CreateBlogPage.jsx'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -30,6 +31,10 @@ const router = createBrowserRouter([{
     {
       path: '/test',
       element: <TestComponent />,
+    },
+    {
+      path: '/createBlog',
+      element: <CreateBlog />,
     },
   ],
 },

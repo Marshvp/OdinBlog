@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import dotenv from 'dotenv'
-import process from 'node:process'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import dotenv from "dotenv";
+import process from "node:process";
 
 dotenv.config();
 
@@ -9,13 +9,13 @@ dotenv.config();
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0',
+    host: true,
     port: 4141,
   },
   define: {
-    'import.meta.env.VITE_API': JSON.stringify(process.env.API_URI),
+    "import.meta.env.VITE_API": JSON.stringify(process.env.API_URI),
     css: {
-      postcss: "./postcss.config.mjs"
-    }
+      postcss: "./postcss.config.mjs",
+    },
   },
-})
+});

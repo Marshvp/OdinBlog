@@ -11,8 +11,17 @@
     "tailwindWatch": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch"
   },
   "dependencies": {
+    "@tiptap/extension-blockquote": "^2.10.4",
+    "@tiptap/extension-bullet-list": "^2.10.4",
+    "@tiptap/extension-heading": "^2.10.4",
+    "@tiptap/extension-list-item": "^2.10.4",
+    "@tiptap/pm": "^2.10.4",
+    "@tiptap/react": "^2.10.4",
+    "@tiptap/starter-kit": "^2.10.4",
     "dotenv": "^16.4.5",
     "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.469.0",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.2"

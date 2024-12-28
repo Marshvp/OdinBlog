@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import useCheckAdmin from "../../hooks/auth/VerifyAdmin";
-import useAuth from "../../hooks/auth/VerifyToken";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function TestComponent() {
   const { isAdmin, loading, error } = useCheckAdmin();
@@ -23,7 +23,9 @@ export default function TestComponent() {
     <div>
       <h1>Test page</h1>
       <p>Hello, {username}</p>
-      <button className="bg-blogBlack rounded-md p-2 text-slate-300 hover:text-blogTeal">Add a new Blog</button>
+      <Link to={'/createBlog'}>
+        <button className="bg-blogBlack rounded-md p-2 text-slate-300 hover:text-blogTeal">Add a new Blog</button>
+      </Link>
     </div>
   )
 }
