@@ -6,6 +6,7 @@ import ListItem from "@tiptap/extension-list-item"
 import Image from "@tiptap/extension-image"
 import Highlight from "@tiptap/extension-highlight"
 import { useCallback } from "react"
+import MyFloatingMenu from "./MyFloatingMenu"
 
 
 const CreateBlogTipTap = () => {
@@ -46,6 +47,7 @@ const CreateBlogTipTap = () => {
         <EditorContent editor={testEditor} className="max-w-4xl w-full" />
       </div>
       <MyBubbleMenu editor={testEditor} />
+      <MyFloatingMenu editor={testEditor} />
     </div>
   )
 }
