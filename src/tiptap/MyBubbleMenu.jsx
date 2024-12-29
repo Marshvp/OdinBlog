@@ -1,5 +1,5 @@
 import { BubbleMenu } from "@tiptap/react";
-import { Bold, Dot, Heading1, Heading2, Heading3, Italic, ListOrdered, Strikethrough } from "lucide-react";
+import { Bold, Dot, Heading1, Heading2, Heading3, Italic, ListOrdered, Pen, Strikethrough } from "lucide-react";
 import PropTypes from "prop-types";
 
 export default function MyBubbleMenu({ editor }) {
@@ -60,6 +60,12 @@ export default function MyBubbleMenu({ editor }) {
           className={`px-2 py-1 rounded ${editor.isActive('heading', { level: 3 }) ? 'bg-blue-500 text-white' : 'bg-white'}`}>
 
           <Heading3 />
+        </button>
+        <button
+          onClick={() => editor.chain().focus().toggleHighlight({ color: '#ffc078' }).run()}
+          className={`px-2 py-1 rounded ${editor.isActive('highlight', { color: '#ffc078' }) ? 'bg-blue-500 text-white' : 'bg-white'}`}>
+
+          <Pen />
         </button>
       </BubbleMenu>
     </>

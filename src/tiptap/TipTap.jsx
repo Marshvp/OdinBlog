@@ -4,6 +4,7 @@ import MyBubbleMenu from "./MyBubbleMenu"
 import BulletList from "@tiptap/extension-bullet-list"
 import ListItem from "@tiptap/extension-list-item"
 import Image from "@tiptap/extension-image"
+import Highlight from "@tiptap/extension-highlight"
 import { useCallback } from "react"
 
 
@@ -13,7 +14,8 @@ const CreateBlogTipTap = () => {
       StarterKit,
       BulletList,
       ListItem,
-      Image
+      Image,
+      Highlight,
     ],
     content: '<p>Hello Marshall</p> <br><br><br><br><br>',
     editorProps: {
@@ -36,11 +38,13 @@ const CreateBlogTipTap = () => {
 
 
   return (
-    <div>
-      <div>
+    <div className="editorContainer flex flex-col items-center ">
+      <div className="">
         <button onClick={addImage}>Set Image</button>
       </div>
-      <EditorContent editor={testEditor} />
+      <div className="w-full flex justify-center">
+        <EditorContent editor={testEditor} className="max-w-4xl w-full" />
+      </div>
       <MyBubbleMenu editor={testEditor} />
     </div>
   )

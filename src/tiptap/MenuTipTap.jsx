@@ -7,5 +7,10 @@ export default function TipTapMenuBar() {
   const extensions = [StarterKit]
 
 
+  return (
+    <>
+
+    </>
+  )
 
 }
